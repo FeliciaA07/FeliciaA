@@ -7,9 +7,15 @@ function setup () {
     bananaImg.size(200, 100)
     heading = createElement('h2', 'Click the Banana!')
     heading.position(width / 3, height / 4)
+    frameRate(2)
 }
 
 function draw() {
     bananaImg.position(random(width), random(height))
     bananaImg.mousePressed(youWon)
+}
+
+function youWon() {
+    heading.html("You Won!")
+    bananaImg.remove()
 }
