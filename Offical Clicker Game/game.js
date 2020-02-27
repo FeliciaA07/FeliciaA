@@ -1,5 +1,5 @@
 // Initialize UI Elements
-let bananaImg
+let berryImg
 let scoreDisplay
 let livesDisplay
 let difficultySlider
@@ -14,7 +14,9 @@ let winningNum = 5
 function setup() {
   // Setup Canvas
   createCanvas(windowWidth, windowHeight)
-
+  berryImg = createImg('strawberry.png', 'strawberry image')
+  berryImg.size(130, 140)
+  frameRate(1)
 
   // Setup Lives Display
   livesDisplay = createElement('h4', 'LIVES: ' + lives)
@@ -31,13 +33,13 @@ function draw() {
 
 
   // Randomly Position Banana
-  bananaImg.position(random(width), random(height))
+  berryImg.position(random(width), random(height))
 
 
 }
 
 function mousePressed() {
-  if (dist(mouseX, mouseY, bananaImg.x, bananaImg.y) > 200) {
+  if (dist(mouseX, mouseY, berryImg.x, berryImg.y) > 200) {
     decreaseLives()
   }
 }
